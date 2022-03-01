@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/photo-browser/static/js/main.93e9cf37.js",
+    "main.js": "/photo-browser/static/js/main.b7d6c713.js",
     "index.html": "/photo-browser/index.html",
-    "main.93e9cf37.js.map": "/photo-browser/static/js/main.93e9cf37.js.map"
+    "main.b7d6c713.js.map": "/photo-browser/static/js/main.b7d6c713.js.map"
   },
   "entrypoints": [
-    "static/js/main.93e9cf37.js"
+    "static/js/main.b7d6c713.js"
   ]
 }
