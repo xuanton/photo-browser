@@ -1,12 +1,16 @@
-import { Typography } from '@material-ui/core'
-import React from 'react'
+import { Typography } from "@mui/material";
+import React from "react";
 
 function Footer() {
-    return (
-        <div>
-            <Typography>Made with <span role="img" aria-label="heart">❤️</span> by Xuan Ton.</Typography>
-        </div>
-    )
+  return (
+    <Typography>
+      Made with{" "}
+      <span role="img" aria-label="heart">
+        ❤️
+      </span>{" "}
+      by Xuan Ton.
+    </Typography>
+  );
 }
 
-export default Footer
+export default Footer;
