@@ -12,7 +12,7 @@ function FullSizePhoto({ photosData }) {
         (item) =>
           item.id == id && (
             <div key={item.id}>
-              <img src={item.url} />
+              <img alt={item.title} src={item.url} />
               <Typography>Caption: {item.title}</Typography>
             </div>
           )

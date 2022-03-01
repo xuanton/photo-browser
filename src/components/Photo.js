@@ -5,7 +5,7 @@ function Photo({ data }) {
   return (
     <div key={data.id}>
       <Link to={`/photos/${data.id}`}>
-        <img src={data.thumbnailUrl} />
+        <img alt={data.title} src={data.thumbnailUrl} />
       </Link>
     </div>
   );
