@@ -4,6 +4,12 @@ Photo Browser is an application developed with React JS using JSON data from htt
 
 [See Live Demo](https://xuanton.github.io/photo-browser/#/)
 
+### Application features:
+- List of photos with thumbnails.
+- Display full-size photo with caption.
+- List of albums and photos within an album.
+- Display user's information.
+
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/download/) to install the dependencies.
