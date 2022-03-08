@@ -2,7 +2,7 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import App from "./App";
 
-test("Test on load, photo lists and photos are visible", async () => {
+test("Application on load", async () => {
   render(<App />);
 
   await waitFor(() => screen.getByRole("heading"));
@@ -10,7 +10,7 @@ test("Test on load, photo lists and photos are visible", async () => {
   expect(screen.getByRole("img")).toBeVisible();
 });
 
-test("Test loading full-size image", async () => {
+test("Full-size image rendering", async () => {
     render(<App />);
     const imgCaption = /accusamus beatae ad facilis cum similique qui sunt/i;
   
@@ -22,7 +22,7 @@ test("Test loading full-size image", async () => {
     expect(screen.getByRole("button", { name: /go back/i })).toBeVisible();
   });
 
-test("Test Albums page rendering", async () => {
+test("Albums page rendering", async () => {
   render(<App />);
 
   fireEvent.click(screen.getByRole("link", { name: /albums/i }));
@@ -31,7 +31,7 @@ test("Test Albums page rendering", async () => {
   expect(screen.getByRole("button", { name: /album 10/i })).toBeVisible();
 });
 
-test("Test User page rendering", async () => {
+test("User page rendering", async () => {
   render(<App />);
 
   fireEvent.click(screen.getByTestId("AccountCircleIcon"));
@@ -39,5 +39,3 @@ test("Test User page rendering", async () => {
   expect(screen.getByText(/username/i)).toBeVisible();
   expect(screen.getByText(/hildegard.org/i)).toBeVisible();
 });
-
-
