@@ -17,37 +17,24 @@ function App() {
 
   //Get data and set state
   useEffect(() => {
-    const getPhotos = async () => {
-      const data = await fetchData(
-        "https://jsonplaceholder.typicode.com/photos"
-      );
-      setPhotos(data);
-    };
-    const getAlbums = async () => {
-      const data = await fetchData(
-        "https://jsonplaceholder.typicode.com/albums?_limit=10"
-      );
-      setAlbums(data);
-    };
-    const getUser = async () => {
-      const data = await fetchData(
-        "https://jsonplaceholder.typicode.com/users/1"
-      );
-      setUser(data);
-    };
-
-    getPhotos();
-    getAlbums();
-    getUser();
+    fetchData()
   }, []);
 
-  //Fetch data function
-  const fetchData = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    return data;
-  };
+  const fetchData = async () => {
+    const urls = [
+      "https://jsonplaceholder.typicode.com/photos",
+      "https://jsonplaceholder.typicode.com/albums?_limit=10",
+      "https://jsonplaceholder.typicode.com/users/1",
+    ];
+  
+    const responses = await Promise.all(urls.map((url) => fetch(url)));
+    const data = await Promise.all(responses.map((response) => response.json()));
+    const [photos, albums, user] = data;
+  
+    setPhotos(photos);
+    setAlbums(albums);
+    setUser(user);
+  }
 
   return (
     //Routing components
